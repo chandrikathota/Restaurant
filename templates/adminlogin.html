@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="{% static 'styles/adminlogin.css' %}" />
+</head>
+<body>
+    <img class="user-icon" src="/static/Images/man-user.png"/>
+    <div class="container">
+        
+        <h1>Sign In</h1>
+        <form>
+            <div class="form-control">
+                <input class="adm-email" type="email" name="admin-email" required/>
+                <label>Your Email</label>
+            </div>
+            <div class="form-control">
+                <input class="adm-paswd" type="password" name="admin-passwd" required/>
+                <label>Your Password</label>
+            </div>
+            <button class="signin-btn">Sign In</button>
+            <p class="text">New Admin?Click Here
+                <a href="{% url 'adminsignup' %}">Sign Up</a>
+            </p>
+        </form>
+    </div>
+    
+</body>
+</html>
+<script>
+    const labels=document.querySelectorAll(".form-control label");
+
+    labels.forEach((label) => {
+        label.innerHTML=label.innerText
+        .split("")
+        .map(
+            (letter,idx) =>
+            `<span style="transition-delay:$(idx * 50)ms">${letter}</span>`
+        )
+        .join("");
+    })
+    
+</script>

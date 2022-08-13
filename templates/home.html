@@ -1,0 +1,14 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home Page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/home.css' %}">
+    
+</head>
+<body>
+    <h1 id="heading">Cuisins</h1>
+    <a href="{%url 'user_catalog' %}"> <button class="btn">User</button></a>
+    <a href="{%url 'adminlogin' %}"><button class="btn">Admin</button></a>
+</body>
+</html>

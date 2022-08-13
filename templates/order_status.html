@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Order Status</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/order_status.css' %}">
+</head>
+<body>
+    <h1 style="text-align: center; color:rgb(248, 102, 44); font-size:40px">Order Status</h1>
+    
+     <div class="order-details-tab">
+        
+        <div class="status">
+            <label class="statuslabel">Your Order Status</label>
+            <span class="status_field">Accepted</span>
+        </div>
+        <div class="time">
+            <label class="timelabel">Order will arrive in</label>
+            <span class="time-field">10 Minutes</span>
+        </div>
+        
+        <br>
+        <br>
+        
+     </div>
+     <hr style="color: silver;">
+     <div class="belowhalf">
+        <div class="itemslist-in-order">
+            <h1>Your Items.</h1>
+            <table class="orders-table" >
+                <tr><td>Dosa</td><td>1</td><td>Rs 50</td></tr>
+    
+            </table>
+         </div>
+         <div class="order-more">
+            <h2>Missing Anything?</h2>
+            <a href="{% url 'user_catalog' %}"><button class="tap-btn">Tap Here!</button></a>
+         </div>
+     </div>
+     <footer class="footer">
+        
+        <a href="#"><button class="payhere-btn">Pay Here</button></a>
+     </footer>
+</body>
+</html>
