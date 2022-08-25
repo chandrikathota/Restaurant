@@ -3,10 +3,13 @@
     
 }
 body{
-    background-color: rgb(247, 215, 174);
+    background-image: url('/static/Images/foodblack.jpg');
     font-family: 'inter','serif';
+    background-size: cover;
+    background-attachment: fixed;
 }
 .header{
+    
     color: rgb(207, 103, 33);
     width: 100%;
     position: relative;
@@ -16,6 +19,7 @@ body{
 }
 .items-container{
     bottom: 90px;
+   
     background-color: transparent;
 }
 #order_text{
@@ -52,23 +56,23 @@ h1{
 .menu_links a{
     margin:15px;
     font-size: 19px;
-    color: black;
+    color: rgb(245, 163, 96);
     font-weight: bold;
     text-decoration: none;
 }
 .menu_links a:hover{
-    text-shadow:0 0 1px  rgb(88, 89, 90);
+    text-shadow:0 0 1px  rgb(245, 210, 157);
 }
 .categories a{
     margin:10px;
     margin-left: 15px;
     font-size: 19px;
-    color: rgb(175, 58, 84);
+    color: rgb(245, 163, 96);
     font-weight: bold;
     text-decoration: none;
     padding: 10px;
     border-radius: 7px;
-    border: 1px solid rgb(247, 215, 174) ;
+
 }
 .categories{
     margin-left: 350px;
@@ -78,8 +82,8 @@ h1{
    
 }
 .categories a:hover{
-    background-color: rgb(247, 192, 192);
-    border: 1px solid;
+    background-color: rgb(252, 232, 232);
+    border: 0px solid;
     transition: 0.4s;
     -webkit-transition: 0.3s ease-in-out;
     transition: 0.6 ease-out;
@@ -93,10 +97,17 @@ h1{
 
 table,td,th{
     align-items: center;
+    justify-content: center;
     border-collapse: collapse;
 }
+td,th{
+    max-width: 120px;
+}
+th{
+    color:lightcyan;
+}
 .items-table tr{
-    margin: 30px;
+    margin: 10px;
 }
 .items-table th{
         font-size: 25px;
@@ -106,6 +117,7 @@ table,td,th{
     font-size: 22px;
     text-align: center;
     align-items: center;
+    color: white;
 }
 .add-btn{
     cursor: pointer;
@@ -140,7 +152,7 @@ table,td,th{
     margin: 20px;
     width: 200px;
     height: 45px;
-    margin-top: 2px;
+    margin-top: -2px;
     float:right;
     font-size: 19px;
     color: rgb(20, 17, 18);
@@ -151,7 +163,7 @@ table,td,th{
     border: 1px solid rgb(24, 22, 22) ;
 }
 .footer .place-odr-btn:hover{
-    background-color: rgb(248, 136, 161);
+    background-color: rgb(250, 126, 147);
 }
 .total_price_part{
     display: inline;
@@ -181,11 +193,12 @@ table,td,th{
     border: none;
     display: flex;
     align-items: center;
+    justify-content: center;
     padding-right: -30px;
     margin-right: -55px;
     margin-left: 10px;   
 }
-.wrapper .minus, .plus{
+.minus, .plus{
     width: 30px;
     height: 30px;
     background-color: rgb(140, 143, 143);
@@ -195,16 +208,16 @@ table,td,th{
     display: flex;
     text-align: center;
 }
-.wrapper .minus{
+.minus{
     padding-left: 9px;
     padding-bottom: 20px;
 
 }
-.wrapper .plus{
+.plus{
     padding-left: 6px;
     padding-top: -10px;
 }
-.wrapper .num{
+.num{
     background-color: aliceblue;
     border: 1px solid black;
     display: flex;
@@ -225,4 +238,21 @@ table,td,th{
 textarea{
     resize: none;
 }
-
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+.drp-content{
+    display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.drp-content a{
+    color: black;
+    padding: 5px 6px;
+    text-decoration: none;
+    display: block;
+}

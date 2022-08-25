@@ -6,22 +6,22 @@
     <link rel="stylesheet" href="{% static 'styles/adminlogin.css' %}" />
 </head>
 <body>
-    <img class="user-icon" src="/static/Images/man-user.png"/>
     <div class="container">
         
         <h1>Sign In</h1>
-        <form>
+        <form method="post">
+            {% csrf_token %}
             <div class="form-control">
-                <input class="adm-email" type="email" name="admin-email" required/>
-                <label>Your Email</label>
+                <input class="adm-usrname" type="text" name="username"/>
+                <label>Your Username</label>
             </div>
             <div class="form-control">
-                <input class="adm-paswd" type="password" name="admin-passwd" required/>
+                <input class="adm-paswd" type="password" name="password" />
                 <label>Your Password</label>
             </div>
-            <button class="signin-btn">Sign In</button>
+            <a href="adminhome.html"><button class="signin-btn">Sign In</button></a>
             <p class="text">New Admin?Click Here
-                <a href="{% url 'adminsignup' %}">Sign Up</a>
+                <a href="#">Register</a>
             </p>
         </form>
     </div>

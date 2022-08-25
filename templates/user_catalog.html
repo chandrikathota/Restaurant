@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="banner-img">
-        <div class="header">
+        <header class="header">
             <div class="Heading"><h1><span id="order_text"> Order</span> Your Food!</h1></div>
             
             <div class="menu_links">
@@ -19,12 +19,20 @@
                 <button class="res-now-btn">Reserve Now</button>
             </div>
             
-        </div>
+        </header>
         <br>
         
     </div>
     <div class="menu">
         <div class="categories">
+            <div class="dropdown">
+                <a class="drpname" href="#">All</a>
+                <div class="drp-content">
+                    <a href="#">Veg</a>
+                    <a href="#">Non-Veg</a>
+                </div>
+            </div>
+            
             <a href="#" >Starters</a>
             <a href="#">Main Course</a>
             <a href="#">Drinks</a>
@@ -34,27 +42,32 @@
         <br>
 
         <div class="items-container">
+            <h1 style="color: green;font-size:50px; border-bottom:-30px; ">Menu</h1>
             <table class="items-table" >
                 <tr>
-                    <th>Item Name</th><th>Description</th><th>Price</th><th>Quantity</th><th>Click to Order</th>
+                    <th>Item</th><th>Description</th><th>Price</th><th>Quantity</th><th>Order</th>
                 </tr>
+                {% for item in items %}
                 <tr>
-                    <td>Biryani</td><td> dosa is a healthy breakfast option</td><td>500</td>
-                    <td>
-                        <div class="wrapper">
-                            <span class="minus"><span>-</span></span>
-                            <span class="num"></span>
-                            <span class="plus"><span>+</span></span>
-                        </div>
-                    </td>
-                    <td><button class="add-btn">+Add</button></td>
+                    <div class="row">
+                        <td>{{item.item_name}}</td><td>{{item.item_desc}} </td><td class="price">${{item.item_price}} </td>
+                        <td>
+                            <div class="wrapper">
+                                <span class="minus"><span>-</span></span>
+                                <span class="num"></span>
+                                <span class="plus"><span>+</span></span>
+                            </div>
+                        </td>
+                        <td><button class="add-btn">+Add</button></td>
+                    </div>
                 </tr>
+                {% endfor %}
             </table>
         </div>
     </div>
 
     <footer class="footer">
-        <label class="total_price-lbl">Total Price:</label><input class="total_price" type="text" name="total_price" value="500"  readonly>
+        <label class="total_price-lbl">Total Price:</label><input class="total_price" type="text" name="total_price" value={{orders.total_amount}}  readonly>
         <a href="{% url 'order_status' %}"><button class="place-odr-btn">Place order</button></a>
 
     </footer>
@@ -62,9 +75,9 @@
 </body>
 </html>
 <script>
-    const plus=document.querySelector('.plus');
-const minus=document.querySelector('.minus');
-const num=document.querySelector('.num');
+const plus=document.getElementsByClassName('plus');
+const minus=document.getElementsByClassName('minus');
+const num=document.getElementsByClassName('num');
 num.innerHTML=1;
 update=(n) =>{
     num.innerHTML=(n<10 && n>0) ? `${n}` : n;
