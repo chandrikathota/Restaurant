@@ -3,14 +3,14 @@
     
 }
 body{
-    background-image: url('/static/Images/foodblack.jpg');
     font-family: 'inter','serif';
     background-size: cover;
     background-attachment: fixed;
 }
 .header{
-    
-    color: rgb(207, 103, 33);
+    font-family: 'inter','serif';
+    background-color: #f3ad84;
+    color: black;
     width: 100%;
     position: relative;
     display: inline-flex;
@@ -19,20 +19,17 @@ body{
 }
 .items-container{
     bottom: 90px;
-   
-    background-color: transparent;
+    background-color: yellow;
 }
-#order_text{
-    font-size:60px;
-    
+.itembox{
+    background-color: #f3ad84;
 }
 h1{
     margin-top: -18px;
 }
 .menu_links{
     display: inline-flex;
-
-    
+    color: black;
 }
 .res-now-btn{
     margin: 20px;
@@ -88,53 +85,6 @@ h1{
     -webkit-transition: 0.3s ease-in-out;
     transition: 0.6 ease-out;
 }
-
-.items-table{
-    width: 100%;
-    margin-top: 40px;
-    text-align: center;
-}
-
-table,td,th{
-    align-items: center;
-    justify-content: center;
-    border-collapse: collapse;
-}
-td,th{
-    max-width: 120px;
-}
-th{
-    color:lightcyan;
-}
-.items-table tr{
-    margin: 10px;
-}
-.items-table th{
-        font-size: 25px;
-}
-.items-table td{
-    margin-top: 40px;
-    font-size: 22px;
-    text-align: center;
-    align-items: center;
-    color: white;
-}
-.add-btn{
-    cursor: pointer;
-    margin: 20px;
-    width: 100px;
-    margin-left: 15px;
-    font-size: 19px;
-    color: rgb(175, 58, 84);
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 7px;
-    border: 1px solid rgb(245, 130, 110) ;
-
-}
-.add-btn:hover{
-    background-color:rgb(248, 136, 161) ;
-}
 .footer{
     background-color: aliceblue;
     width: 100%;
@@ -149,7 +99,7 @@ th{
 .footer .place-odr-btn{
     cursor: pointer;
     background-color: blanchedalmond;
-    margin: 20px;
+    margin: -220px;
     width: 200px;
     height: 45px;
     margin-top: -2px;
@@ -192,11 +142,7 @@ th{
 .wrapper{
     border: none;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-right: -30px;
-    margin-right: -55px;
-    margin-left: 10px;   
+    justify-content: left;   
 }
 .minus, .plus{
     width: 30px;
@@ -235,24 +181,9 @@ th{
     font-size: 28px;
     font-weight: bolder;
 }
-textarea{
-    resize: none;
-}
-.dropdown{
-    position: relative;
-    display: inline-block;
-}
-.drp-content{
-    display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-.drp-content a{
-    color: black;
-    padding: 5px 6px;
-    text-decoration: none;
-    display: block;
+.itembox{
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+    background-color: #f3ad84;
 }

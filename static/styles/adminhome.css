@@ -2,9 +2,11 @@
     box-sizing: border-box;
 }
 body{
+    
     font-family: 'inter','serif';
     justify-content: center;
-    background-position: fixed;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 .ordercard{
     border-radius: 5px;

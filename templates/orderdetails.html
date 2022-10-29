@@ -1,9 +1,30 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Order Details</title>
+    <link rel="stylesheet" href="{% static '/styles/orderdetails.css' %}"/>
 </head>
 <body>
-    ORDER DETAILS
+        <div class="container">
+            <div class="statusinfo">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <label class="slbl">Status</label>
+                    <input type="text" class="sfield" name="status" value=""/>
+                    <label class="tlbl">Time</label>
+                    <input type="text" class="tfield" value=""/>
+                    <input type="submit" class="enterbtn" name="time" value="Enter"/>
+                </form>
+            </div>
+        </div>
+        <h2>Your items...</h2>
+        <div class="itemstable">
+            <table>
+                <tr>
+                    <td>1</td><td>Dosa</td><td>50</td>
+                </tr>
+            </table>
+        </div>
 </body>
 </html>

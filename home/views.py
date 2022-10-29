@@ -1,4 +1,5 @@
 
+from urllib import request
 from django.shortcuts import redirect
 from django.views.generic import TemplateView
 from .models import Item
@@ -13,20 +14,19 @@ class HomePageView(TemplateView):
 class User_catalogView(TemplateView):
     extra_context={'items': Item.objects.all(),'orders':Order.objects.all()}
     template_name='user_catalog.html'
-class Order_statusView(TemplateView):
+class Order_statusView(TemplateView,):
+    extra_context={'items': Item.objects.all(),'orders':Order.objects.all()}
     template_name='order_status.html'
 class AboutUsView(TemplateView):
     template_name='about.html'
 class AdminLoginView(TemplateView):
     template_name='adminlogin.html'
-class OrderDetails(TemplateView):
+class OrderDetailsView(TemplateView):
     template_name='orderdetails.html'
+
 class AdminHomeView(TemplateView):
     template_name='adminhome.html'
     
-    
-
-
 def adminlogin(request):
     if(request.method=="POST"):
         username1 = request.POST['username']

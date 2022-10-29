@@ -25,13 +25,6 @@
     </div>
     <div class="menu">
         <div class="categories">
-            <div class="dropdown">
-                <a class="drpname" href="#">All</a>
-                <div class="drp-content">
-                    <a href="#">Veg</a>
-                    <a href="#">Non-Veg</a>
-                </div>
-            </div>
             
             <a href="#" >Starters</a>
             <a href="#">Main Course</a>
@@ -42,27 +35,17 @@
         <br>
 
         <div class="items-container">
-            <h1 style="color: green;font-size:50px; border-bottom:-30px; ">Menu</h1>
-            <table class="items-table" >
-                <tr>
-                    <th>Item</th><th>Description</th><th>Price</th><th>Quantity</th><th>Order</th>
-                </tr>
-                {% for item in items %}
-                <tr>
-                    <div class="row">
-                        <td>{{item.item_name}}</td><td>{{item.item_desc}} </td><td class="price">${{item.item_price}} </td>
-                        <td>
-                            <div class="wrapper">
-                                <span class="minus"><span>-</span></span>
-                                <span class="num"></span>
-                                <span class="plus"><span>+</span></span>
-                            </div>
-                        </td>
-                        <td><button class="add-btn">+Add</button></td>
+                    <div class="itembox">
+                        <h1>Cutlet</h1>
+                        <h1>$20</h1>
+                        <p>hgsdaghbdhfsueiusnnvsbcjsgabasbmvhseg</p>
+                        <div class="wrapper">
+                            <span class="minus"><span>-</span></span>
+                            <span class="num"></span>
+                            <span class="plus"><span>+</span></span>
+                        </div>
+                        <button>Add</button>
                     </div>
-                </tr>
-                {% endfor %}
-            </table>
         </div>
     </div>
 

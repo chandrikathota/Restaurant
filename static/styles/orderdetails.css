@@ -5,14 +5,13 @@ body{
     font-family: 'inter','serif';
 }
 .container{
-    height: auto;
-    width: auto;
     display: flex;
     float: right;
     align-items: baseline;
     text-align: center;
 }
 .statusinfo{
+    display: inline-flex;
     float: right;
 }
 .slbl,.tlbl{
@@ -21,7 +20,7 @@ body{
     margin: 10px;
     margin-right: 40px;
 }
-.refreshbtn button{
+.enterbtn{
     height: 35px;
     width: 120px;
     font-size: 15px;
@@ -29,7 +28,7 @@ body{
     cursor: pointer;
     border-radius: 10px;
 }
-.refreshbtn button:hover{
+.enterbtn:hover{
     border: none;
 }
 .tlbl{
@@ -45,9 +44,9 @@ body{
     border-radius: 10px;
 }
 
-.itemstable table{
+.itemstable{
     font-size: 20px;
-    width: 70%;
+    width: 65%;
     border: black 1px solid;
     border-collapse: collapse;
 }
@@ -55,7 +54,8 @@ body{
     background-color: antiquewhite;
 }
 table,tr,td{
-    border: black 1px solid;
+    border: none;
+    
 }
 .price{
     width: 600px;
