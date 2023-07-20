@@ -11,8 +11,10 @@
         {% for order in orders %}
         <div class="ordercard">
                 <h2>Cabin : {{order.cabin_id}} </h2>
-                <h1>Total Price:{{order.total_amount}}</h1><br><br>
-                <button class="open"><a href="{% url 'orderdetails' %}">OPEN</a></button>
+                <h1>Total Price:{{order.total_amount}}</h1>
+                <h2>Order id: {{order.order_id}}</h2>
+                <br>
+                <button onclick="setGetParameter()" class="open"><a href="{% url 'orderdetails' %}">OPEN</a></button>
         </div>
         {% endfor %}
         

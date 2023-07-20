@@ -10,17 +10,44 @@
             <div class="statusinfo">
                 <form action="" method="post">
                     {% csrf_token %}
-                    <label class="slbl">Status</label>
-                    <input type="text" class="sfield" name="status" value=""/>
-                    <label class="tlbl">Time</label>
+                    <br>
+                    <label class="slbl">Status:</label>
                     <input type="text" class="tfield" value=""/>
+                    <label class="tlbl">Time:</label>
+                    <input type="text" class="sfield" name="status" value=""/>
+                    <br><br>
                     <input type="submit" class="enterbtn" name="time" value="Enter"/>
                 </form>
             </div>
+            <br><br>
+            <div class="acc-rej">
+                <button class="acc-btn">Accept</button>
+                <button class="rej-btn">Reject</button>
+            </div>
+            <br><br>
+            <div class="pay-details">
+                <p>Total Bill:₹10</p>
+            </div>
         </div>
         <h2>Your items...</h2>
+        <h2>Customer Cabin:2</h2>
         <div class="itemstable">
-            <table>
+            <table class="cat-table">
+                <tr>
+                    <td>1</td><td>Dosa</td><td>50</td>
+                </tr>
+                <tr>
+                    <td>1</td><td>Dosa</td><td>50</td>
+                </tr>
+                <tr>
+                    <td>1</td><td>Dosa</td><td>50</td>
+                </tr>
+                <tr>
+                    <td>1</td><td>Dosa</td><td>50</td>
+                </tr>
+                <tr>
+                    <td>1</td><td>Dosa</td><td>50</td>
+                </tr>
                 <tr>
                     <td>1</td><td>Dosa</td><td>50</td>
                 </tr>

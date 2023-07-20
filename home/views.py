@@ -14,6 +14,7 @@ class HomePageView(TemplateView):
 class User_catalogView(TemplateView):
     extra_context={'items': Item.objects.all(),'orders':Order.objects.all()}
     template_name='user_catalog.html'
+    
 class Order_statusView(TemplateView,):
     extra_context={'items': Item.objects.all(),'orders':Order.objects.all()}
     template_name='order_status.html'

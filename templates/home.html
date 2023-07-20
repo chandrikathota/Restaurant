@@ -3,12 +3,14 @@
 <html lang="en">
 <head>
     <title>Home Page</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'styles/home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/home.css' %}?v=1">
     
 </head>
 <body>
-    <h1 id="heading">Cuisins</h1>
-    <a href="{%url 'user_catalog' %}"> <button class="btn">User</button></a>
-    <a href="{%url 'adminlogin' %}"><button class="btn">Admin</button></a>
+    <p id="heading">Vernick Food & Drinks</p>
+    <div class="optionBtns">
+        <a href="{%url 'user_catalog' %}"> <button class="btn">User</button></a>
+        <a href="{%url 'adminlogin' %}"><button class="btn">Admin</button></a>
+    </div>
 </body>
 </html>

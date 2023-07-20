@@ -3,71 +3,71 @@
 <html lang="en">
 <head>
     <title>User Catalog</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'styles/user_catalog.css' %}">
-     
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/user_catalog.css' %}?v=1">
+    <script src="{% static 'js/user_catalog.js' %}" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="banner-img">
-        <header class="header">
-            <div class="Heading"><h1><span id="order_text"> Order</span> Your Food!</h1></div>
-            
-            <div class="menu_links">
+    <div class="catalog">
+        <div class="header">
+            <p class="resName">Welcome to <span>Vernick Food & Drink</span></p>
+            <div class="header-menu">
                 <a href="{% url 'home' %}">Home</a>
                 <a href="{% url 'about' %}">About Us</a>
                 <a href="#">Contact</a>
-
-                <button class="res-now-btn">Reserve Now</button>
+    
+                <button class="reserveBtn" type="button">Reserve Table</button>
             </div>
             
-        </header>
-        <br>
+        </div>
+            <div class="mainSection">
+                <div class="categories">
+                    <button class="cat-btn" type="button"  href="#">All</button>
+                    <button class="cat-btn"  type="button" href="#" >Starters</button>
+                    <button class="cat-btn"  type="button" href="#">Main Course</button>
+                    <button class="cat-btn"  type="button" href="#">Drinks</button>
+                    <button class="cat-btn"  type="button" href="#">Deserts</button>
+                    <button class="cat-btn"  type="button" href="#">Snacks</button>
+                </div>
+                <div class="menuItems">
+                    {% for item in items %}
+                    <div class="dishDetails">
+                        <div class="itemTitle">
+                            <p class="itemName">{{ item.item_name }}</p>
+                            <p class="itemPrice">${{ item.item_price}}</p>
+                        </div>
+                        <p class="itemDesc">{{item.item_desc}}</p>
+                        <div class="wrapper">
+                            <p class="qtyText">Qty:</p>
+                            <button class="minus" type="button">-</button>
+                            <p class="qunty">1</p>
+                            <button class="plus" type="button">+</button>
+                        </div><br>
+                        
+                        <button class="add-btn" type="button" >+Add</button>
+                        <button class="deleteButton"><i class="fa fa-trash-can deleteIcon" style="font-size: 15px; display: none;"></i></button>
+                    </div>
+                    {% endfor %}
+                </div>
+                
+            </div>
+    
+            <footer class="footer">
+                <div class="pricingArea">
+                    <div class="priceTags">
+                        <p class="totalPriceText">Total Bill:</p>
+                        <p id="priceDisplay" class="totalPriceValue">$0</p>
+                    </div>
+                    <a href="{% url 'order_status' %}"><button id="confirmOrderBtn" class="confirmOrderBtn" type="button">Place order</button></a>
+    
+                </div>
+            </footer>
+        </div>
         
     </div>
-    <div class="menu">
-        <div class="categories">
-            
-            <a href="#" >Starters</a>
-            <a href="#">Main Course</a>
-            <a href="#">Drinks</a>
-            <a href="#">Deserts</a>
-            <a href="#">Snacks</a>
-        </div>
-        <br>
-
-        <div class="items-container">
-                    <div class="itembox">
-                        <h1>Cutlet</h1>
-                        <h1>$20</h1>
-                        <p>hgsdaghbdhfsueiusnnvsbcjsgabasbmvhseg</p>
-                        <div class="wrapper">
-                            <span class="minus"><span>-</span></span>
-                            <span class="num"></span>
-                            <span class="plus"><span>+</span></span>
-                        </div>
-                        <button>Add</button>
-                    </div>
-        </div>
-    </div>
-
-    <footer class="footer">
-        <label class="total_price-lbl">Total Price:</label><input class="total_price" type="text" name="total_price" value={{orders.total_amount}}  readonly>
-        <a href="{% url 'order_status' %}"><button class="place-odr-btn">Place order</button></a>
-
-    </footer>
-    
 </body>
 </html>
-<script>
-const plus=document.getElementsByClassName('plus');
-const minus=document.getElementsByClassName('minus');
-const num=document.getElementsByClassName('num');
-num.innerHTML=1;
-update=(n) =>{
-    num.innerHTML=(n<10 && n>0) ? `${n}` : n;
-}
-
-let a=1;
-plus.addEventListener('click',() => update(++a));
-minus.addEventListener('click',() => update(--a));
-console.log(a)
-</script>
